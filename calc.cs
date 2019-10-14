@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ConsoleApp2
 {
@@ -13,7 +13,7 @@ namespace ConsoleApp2
             {
                 Console.WriteLine("\nEnter Your Choice:");
                 int action = Convert.ToInt32(Console.ReadLine());
-                double result = 0;
+                double result = 0, input1=0, input2=0;
 
                 switch (action)
                 {
@@ -24,40 +24,32 @@ namespace ConsoleApp2
                         }
                     case 1:
                         {
-                            Console.WriteLine("Enter First Number:");
-                            double input1 = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Enter Second Number:");
-                            double input2 = Convert.ToDouble(Console.ReadLine());
+                            input1 = FirstInput(input1);
+                            input2 = SecondInput(input2);
                             result = Addition(input1, input2);
                             Console.WriteLine("Result is {0}", result);
                             break;
                         }
                     case 2:
                         {
-                            Console.WriteLine("Enter First Number:");
-                            double input1 = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Enter Second Number:");
-                            double input2 = Convert.ToDouble(Console.ReadLine());
+                            input1 = FirstInput(input1);
+                            input2 = SecondInput(input2);
                             result = Subtraction(input1, input2);
                             Console.WriteLine("Result is {0}", result);
                             break;
                         }
                     case 3:
                         {
-                            Console.WriteLine("Enter First Number:");
-                            double input1 = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Enter Second Number:");
-                            double input2 = Convert.ToDouble(Console.ReadLine());
+                            input1 = FirstInput(input1);
+                            input2 = SecondInput(input2);
                             result = Multiplication(input1, input2);
                             Console.WriteLine("Result is {0}", result);
                             break;
                         }
                     case 4:
                         {
-                            Console.WriteLine("Enter First Number:");
-                            double input1 = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Enter Second Number:");
-                            double input2 = Convert.ToDouble(Console.ReadLine());
+                            input1 = FirstInput(input1);
+                            input2 = SecondInput(input2);
                             result = Division(input1, input2);
                             Console.WriteLine("Result is {0}", result);
                             break;
@@ -91,6 +83,18 @@ namespace ConsoleApp2
         {
             double result = input1 / input2;
             return result;
+        }
+        public static double FirstInput(double input1)
+        {
+            Console.WriteLine("Enter First Number:");
+            input1 = Convert.ToDouble(Console.ReadLine());
+            return input1;
+        }
+        public static double SecondInput(double input2)
+        {
+            Console.WriteLine("Enter Second Number:");
+            input2 = Convert.ToDouble(Console.ReadLine());
+            return input2;
         }
     }
 }
